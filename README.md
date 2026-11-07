@@ -15,6 +15,7 @@ A personal collection of agent skills gathered from different authors and kept i
 | [create-verification-skill](skills/create-verification-skill) | Generates a project-local `verify-<app>` skill that launches your app, drives it the way a user would and captures evidence. Run it as `/create-verification-skill`. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
 | [maintain-verification-skill](skills/maintain-verification-skill) | Keeps a generated verification skill and its feature map up to date as the app changes. Run it as `/maintain-verification-skill`. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
 | [friction-log](skills/friction-log) | Files recurring repo or tool papercuts as labeled, prioritized issues with the GitHub CLI (`gh`), or a local `FRICTION.md`. Run it as `/friction-log`. | Adapted from [Kent C. Dodds](https://github.com/kentcdodds/kcd-skills) |
+| [correct](skills/correct) | Finds mistakes agents keep repeating in a repo and makes each one impossible, preferring architecture, then types, then lint, then tests, with docs last. Run it as `/correct`. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
 
 ## Using a skill
 
