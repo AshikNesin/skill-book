@@ -29,7 +29,11 @@ cp -R skills/show-me your-project/.claude/skills/
 
 For improve-codebase-architecture, copy codebase-design, domain-modeling and grilling as well. create-verification-skill and maintain-verification-skill go together.
 
-create-verification-skill was written for Cursor and puts the skill it generates in `.cursor/skills/verify-<app>/`. In Claude Code, move it to `.claude/skills/verify-<app>/` (or ask Claude to write it there) so it gets picked up.
+create-verification-skill puts the skill it generates in the project's `.agents/skills/verify-<app>/`, a tool-neutral location. If your agent only reads its own folder (for example Claude Code reads `.claude/skills/`), link it there: `ln -s ../.agents/skills .claude/skills`.
+
+## Changes from the originals
+
+create-verification-skill and maintain-verification-skill were edited to use `.agents/skills/` instead of Cursor's `.cursor/skills/`. Each skill's `SOURCE.md` lists any changes made to it.
 
 ## Adding a skill
 
