@@ -14,7 +14,7 @@ A personal collection of agent skills gathered from different authors and kept i
 | [grilling](skills/grilling) | Questions you closely about a plan or design until it holds up. Used by improve-codebase-architecture. | [Matt Pocock](https://github.com/mattpocock/skills) |
 | [create-verification-skill](skills/create-verification-skill) | Generates a project-local `verify-<app>` skill that launches your app, drives it the way a user would and captures evidence. Run it as `/create-verification-skill`. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
 | [maintain-verification-skill](skills/maintain-verification-skill) | Keeps a generated verification skill and its feature map up to date as the app changes. Run it as `/maintain-verification-skill`. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
-| [friction-log](skills/friction-log) | Files recurring repo or tool papercuts as labeled, prioritized issues (or a local `FRICTION.md`) so they get fixed. Run it as `/friction-log`. | Adapted from [Kent C. Dodds](https://github.com/kentcdodds/kcd-skills) |
+| [friction-log](skills/friction-log) | Files recurring repo or tool papercuts as labeled, prioritized issues using the tracker's CLI (`gh`, `glab`, `linear` or `acli`), or a local `FRICTION.md`. Run it as `/friction-log`. | Adapted from [Kent C. Dodds](https://github.com/kentcdodds/kcd-skills) |
 
 ## Using a skill
 
