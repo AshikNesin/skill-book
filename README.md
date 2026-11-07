@@ -16,6 +16,10 @@ A personal collection of agent skills gathered from different authors and kept i
 | [maintain-verification-skill](skills/maintain-verification-skill) | Keeps a generated verification skill and its feature map up to date as the app changes. Run it as `/maintain-verification-skill`. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
 | [friction-log](skills/friction-log) | Files recurring repo or tool papercuts as labeled, prioritized issues with the GitHub CLI (`gh`), or a local `FRICTION.md`. Run it as `/friction-log`. | Adapted from [Kent C. Dodds](https://github.com/kentcdodds/kcd-skills) |
 | [correct](skills/correct) | Finds mistakes agents keep repeating in a repo and makes each one impossible, preferring architecture, then types, then lint, then tests, with docs last. Run it as `/correct`. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
+| [typescript-best-practices](skills/typescript-best-practices) | TypeScript rules for `.ts`/`.tsx` files: discriminated unions, branded types, no `as` casts, exhaustive switches, validating data at boundaries, with examples. Run it as `/typescript-best-practices`. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
+| [principle-type-system-discipline](skills/principle-type-system-discipline) | Make illegal states unrepresentable in any typed language. Used by typescript-best-practices. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
+| [principle-boundary-discipline](skills/principle-boundary-discipline) | Validate at system boundaries and trust types inside. Used by typescript-best-practices. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
+| [principle-encode-lessons-in-structure](skills/principle-encode-lessons-in-structure) | Turn repeated instructions into lints, checks or scripts. Used by principle-type-system-discipline. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
 
 ## Use in your projects
 
@@ -42,7 +46,7 @@ npx skills remove show-me
 - Skills go in the project's `.agents/skills/` and are linked into each agent's own folder (for example `.claude/skills/`). The CLI asks which agents you use; name them with `--agent claude-code --agent codex` to skip the question.
 - The CLI writes `skills-lock.json`. Commit it, and after a fresh clone run `npx skills experimental_install` to restore the same skills (this command is still marked experimental).
 - Add `-g` to install for your user account instead, so the skills are available in every project.
-- Some skills need others: install codebase-design, domain-modeling and grilling with improve-codebase-architecture, and install create-verification-skill and maintain-verification-skill together.
+- Some skills need others: install codebase-design, domain-modeling and grilling with improve-codebase-architecture, install create-verification-skill and maintain-verification-skill together, and install the three `principle-*` skills with typescript-best-practices.
 - create-verification-skill puts the skill it generates in the project's `.agents/skills/verify-<app>/`.
 
 To update a skill everywhere, change it here, push, then run `npx skills update -p -y` in each project.
