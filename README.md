@@ -12,6 +12,8 @@ A personal collection of agent skills gathered from different authors and kept i
 | [codebase-design](skills/codebase-design) | Shared architecture vocabulary and principles. Used by improve-codebase-architecture. | [Matt Pocock](https://github.com/mattpocock/skills) |
 | [domain-modeling](skills/domain-modeling) | How to keep a project glossary and decision records (ADRs). Used by improve-codebase-architecture. | [Matt Pocock](https://github.com/mattpocock/skills) |
 | [grilling](skills/grilling) | Questions you closely about a plan or design until it holds up. Used by improve-codebase-architecture. | [Matt Pocock](https://github.com/mattpocock/skills) |
+| [create-verification-skill](skills/create-verification-skill) | Generates a project-local `verify-<app>` skill that launches your app, drives it the way a user would and captures evidence. Run it as `/create-verification-skill`. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
+| [maintain-verification-skill](skills/maintain-verification-skill) | Keeps a generated verification skill and its feature map up to date as the app changes. Run it as `/maintain-verification-skill`. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
 
 ## Using a skill
 
@@ -25,7 +27,9 @@ cp -R skills/show-me ~/.claude/skills/
 cp -R skills/show-me your-project/.claude/skills/
 ```
 
-For improve-codebase-architecture, copy codebase-design, domain-modeling and grilling as well.
+For improve-codebase-architecture, copy codebase-design, domain-modeling and grilling as well. create-verification-skill and maintain-verification-skill go together.
+
+create-verification-skill was written for Cursor and puts the skill it generates in `.cursor/skills/verify-<app>/`. In Claude Code, move it to `.claude/skills/verify-<app>/` (or ask Claude to write it there) so it gets picked up.
 
 ## Adding a skill
 
