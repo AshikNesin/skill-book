@@ -14,6 +14,7 @@ A personal collection of agent skills gathered from different authors and kept i
 | [grilling](skills/grilling) | Questions you closely about a plan or design until it holds up. Used by improve-codebase-architecture. | [Matt Pocock](https://github.com/mattpocock/skills) |
 | [create-verification-skill](skills/create-verification-skill) | Generates a project-local `verify-<app>` skill that launches your app, drives it the way a user would and captures evidence. Run it as `/create-verification-skill`. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
 | [maintain-verification-skill](skills/maintain-verification-skill) | Keeps a generated verification skill and its feature map up to date as the app changes. Run it as `/maintain-verification-skill`. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
+| [friction-log](skills/friction-log) | Files recurring repo or tool papercuts as labeled, prioritized issues (or a local `FRICTION.md`) so they get fixed. Run it as `/friction-log`. | Adapted from [Kent C. Dodds](https://github.com/kentcdodds/kcd-skills) |
 
 ## Using a skill
 
@@ -43,7 +44,7 @@ create-verification-skill puts the skill it generates in the project's `.agents/
 
 ## Changes from the originals
 
-create-verification-skill and maintain-verification-skill were edited to use `.agents/skills/` instead of Cursor's `.cursor/skills/`. Each skill's `SOURCE.md` lists any changes made to it.
+create-verification-skill and maintain-verification-skill were edited to use `.agents/skills/` instead of Cursor's `.cursor/skills/`. friction-log was rewritten to remove its dependency on Kody and on other kcd-skills, so it works with any agent and any issue tracker. Each skill's `SOURCE.md` lists any changes made to it.
 
 ## Adding a skill
 
