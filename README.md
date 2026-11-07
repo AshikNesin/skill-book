@@ -17,31 +17,35 @@ A personal collection of agent skills gathered from different authors and kept i
 | [friction-log](skills/friction-log) | Files recurring repo or tool papercuts as labeled, prioritized issues with the GitHub CLI (`gh`), or a local `FRICTION.md`. Run it as `/friction-log`. | Adapted from [Kent C. Dodds](https://github.com/kentcdodds/kcd-skills) |
 | [correct](skills/correct) | Finds mistakes agents keep repeating in a repo and makes each one impossible, preferring architecture, then types, then lint, then tests, with docs last. Run it as `/correct`. | [Lauren Tan / pstack](https://github.com/cursor/plugins/tree/main/pstack) |
 
-## Using a skill
+## Use in your projects
 
-Copy a skill's folder into the tool-neutral `.agents/skills/` directory:
-
-```sh
-# available in every project
-cp -R skills/show-me ~/.agents/skills/
-
-# or for one project only
-cp -R skills/show-me your-project/.agents/skills/
-```
-
-If your agent only reads its own folder (for example Claude Code reads `.claude/skills/`), link that folder to `.agents/skills/` once:
+Skills are installed and kept in sync with the open-source [`skills`](https://www.npmjs.com/package/skills) CLI. Nothing to install first; `npx` fetches it. Run these from the project's root.
 
 ```sh
-# every project
-ln -s ~/.agents/skills ~/.claude/skills
+# see what's available
+npx skills add AshikNesin/skill-book --list
 
-# one project (run from the project root)
-ln -s ../.agents/skills .claude/skills
+# install some skills
+npx skills add AshikNesin/skill-book --skill show-me --skill friction-log -y
+
+# or install all of them
+npx skills add AshikNesin/skill-book --skill '*' -y
+
+# pull the latest changes from skill-book
+npx skills update -p -y
+
+# list or remove installed skills
+npx skills list
+npx skills remove show-me
 ```
 
-For improve-codebase-architecture, copy codebase-design, domain-modeling and grilling as well. create-verification-skill and maintain-verification-skill go together.
+- Skills go in the project's `.agents/skills/` and are linked into each agent's own folder (for example `.claude/skills/`). The CLI asks which agents you use; name them with `--agent claude-code --agent codex` to skip the question.
+- The CLI writes `skills-lock.json`. Commit it, and after a fresh clone run `npx skills experimental_install` to restore the same skills (this command is still marked experimental).
+- Add `-g` to install for your user account instead, so the skills are available in every project.
+- Some skills need others: install codebase-design, domain-modeling and grilling with improve-codebase-architecture, and install create-verification-skill and maintain-verification-skill together.
+- create-verification-skill puts the skill it generates in the project's `.agents/skills/verify-<app>/`.
 
-create-verification-skill puts the skill it generates in the project's `.agents/skills/verify-<app>/`, so the link above picks it up too.
+To update a skill everywhere, change it here, push, then run `npx skills update -p -y` in each project.
 
 ## Changes from the originals
 
@@ -54,6 +58,7 @@ create-verification-skill and maintain-verification-skill were edited to use `.a
 3. Add a `SOURCE.md` with the original link, author, license and the commit you copied from.
 4. Bring along any other skills it calls by name.
 5. Add a row to the table above.
+6. Push, so `npx skills` can see it.
 
 ## Licenses
 
